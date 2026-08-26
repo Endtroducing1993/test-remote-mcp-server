@@ -2,17 +2,20 @@ from fastmcp import FastMCP
 import os
 import aiosqlite
 import sqlite3
+import tempfile
 from datetime import datetime
 import json
 
-
-# ============================================================
+# --------------------------------------------------
 # Configuration
-# ============================================================
+# --------------------------------------------------
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-DB_PATH = os.path.join(BASE_DIR, "expenses.db")
+TEMP_DIR = tempfile.gettempdir()
+
+DB_PATH = os.path.join(TEMP_DIR, "expenses.db")
+
 CATEGORIES_PATH = os.path.join(BASE_DIR, "categories.json")
 
 print(f"Database path: {DB_PATH}")
